@@ -1,4 +1,4 @@
-> This is a customer facing site of a hotel booking system made using Next.js (Internal website ----> https://hotel-booking-system-internal.vercel.app Source Code ----> https://github.com/urahara897/hotel-booking-system-internal)
+> This is a customer facing site of a hotel booking system made using Next.js and Tailwind. (Internal website ----> https://hotel-booking-system-internal.vercel.app Source Code ----> https://github.com/urahara897/hotel-booking-system-internal)
 
 > Guests can login only through their google account, logout, update their profile, view their reservations.
 
