@@ -14,6 +14,6 @@
 
 > Guests can also view infomation/description of the hotel.
 
-> Website is hostel on vercel: https://hotel-booking-system-external.vercel.app/
+> Website is hosted on vercel: https://hotel-booking-system-external.vercel.app/
 
 P.S - This webapp is not responsive for mobile users yet.
