@@ -10,11 +10,24 @@ const nextConfig = {
       },
     ],
   },
-  async rewrites() {
+  async headers() {
     return [
       {
-        source: "/api/:path*", // Proxy route on your Next.js app
-        destination: "https://toxjooopnzrsjsekjdrw.supabase.co/:path*", // External API base URL
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "X-Requested-With, Content-Type, Authorization",
+          },
+        ],
       },
     ];
   },
