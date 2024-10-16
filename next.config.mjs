@@ -10,6 +10,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*", // Proxy route on your Next.js app
+        destination: "https://toxjooopnzrsjsekjdrw.supabase.co/:path*", // External API base URL
+      },
+    ];
+  },
 };
 
 export default nextConfig;
