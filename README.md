@@ -4,8 +4,8 @@ A modern hotel booking website built with Next.js and Tailwind CSS, allowing gue
 
 ## Live
 
-External Website (this repo): [https://hotel-booking-system-external.vercel.app/]
-Internal Website: [https://hotel-booking-system-internal.vercel.app/](https://github.com/urahara897/hotel-booking-system-internal)
+External Website (this repo): [https://hotel-booking-system-external.vercel.app/](https://hotel-booking-system-external.vercel.app/)
+Internal Website: [https://hotel-booking-system-internal.vercel.app/](https://hotel-booking-system-internal.vercel.app/login) [https://github.com/urahara897/hotel-booking-system-internal](https://github.com/urahara897/hotel-booking-system-internal)
 
 ## Features
 
