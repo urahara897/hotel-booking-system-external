@@ -9,6 +9,7 @@ import {
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { useReservation } from "./ReservationContext";
+import { useEffect, useState } from "react";
 
 function isAlreadyBooked(range, datesArr) {
   return (
@@ -22,6 +23,18 @@ function isAlreadyBooked(range, datesArr) {
 
 function DateSelector({ settings, cabin, bookedDates }) {
   const { range, setRange, resetRange } = useReservation();
+  const [numberOfMonths, setNumberOfMonths] = useState(1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setNumberOfMonths(window.innerWidth >= 768 ? 2 : 1);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const displayRange = isAlreadyBooked(range, bookedDates) ? {} : range;
 
@@ -34,7 +47,7 @@ function DateSelector({ settings, cabin, bookedDates }) {
   return (
     <div className="flex flex-col justify-between">
       <DayPicker
-        className="pt-8 ps-8 place-self-center"
+        className="pt-8 ps-4 sm:ps-8 place-self-center"
         mode="range"
         onSelect={(range) => setRange(range)}
         selected={displayRange}
@@ -44,7 +57,7 @@ function DateSelector({ settings, cabin, bookedDates }) {
         fromDate={new Date()}
         toYear={new Date().getFullYear() + 5}
         captionLayout="dropdown"
-        numberOfMonths={2}
+        numberOfMonths={numberOfMonths}
         disabled={(curDate) =>
           isPast(curDate) ||
           bookedDates.some((date) => isSameDay(date, curDate))
